@@ -1,26 +1,34 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Button from "./components/buttons/Button/Button";
+import ButtonFilter from "./components/buttons/Filter/Filter";
+import imgDW from "./img/IconDownWhite.svg"
+import imgDB from "./img/IconDownBlue.svg"
+import imgUW from "./img/IconUpWhite.svg"
+import imgUB from "./img/IconUpBlue.svg"
+import Note from "./components/Note/Note";
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+
+    return (
+        <>
+            <header>
+                <Button color="black" text="Черная"/>
+            </header>
+            <main>
+                <Button color="white" text="белая"/>
+            </main>
+            <Button text="круглая" color="white" big={true}/>
+            <Note title="asfsdf" text="sdfsdf"/>
+            <footer>
+                <ButtonFilter color="blue" theme={imgDW} newOld={true}/>
+                <ButtonFilter color="grey" theme={imgDB}/>
+                <ButtonFilter color="blue" theme={imgUW}/>
+                <ButtonFilter color="grey" theme={imgUB} newOld={true}/>
+            </footer>
+        </>
+    );
 }
 
 export default App;
