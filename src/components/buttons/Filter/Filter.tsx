@@ -7,14 +7,14 @@ interface IFilter {
 }
 const ButtonFilter = ({newOld, theme, color}:IFilter) => {
     return(
-        <styled.filter color={color}>
+        <styled.Filter color={color}>
             <div>
                 <img alt="arrow" src={theme}/>
                 <span>
                     {newOld ? "Сначала новые" : "Сначала старые"}
                 </span>
             </div>
-        </styled.filter>
+        </styled.Filter>
     )
 }
 

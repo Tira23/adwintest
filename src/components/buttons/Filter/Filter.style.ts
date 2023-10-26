@@ -1,9 +1,11 @@
 import styled from "styled-components";
 
-export const filter = styled.button<{  color: string }>`
+export const Filter = styled.button<{  color: string }>`
   position: relative;
   padding: 20px;
   border-radius: 40px;
+  width: 192px;
+  height: 64px; 
   background: ${props => (props.color === "blue" && "#88A1DE")
                 || (props.color === "grey" && "#F6F6F6")};
   & div {

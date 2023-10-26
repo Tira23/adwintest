@@ -5,21 +5,29 @@ import imgDW from "./img/IconDownWhite.svg"
 import imgDB from "./img/IconDownBlue.svg"
 import imgUW from "./img/IconUpWhite.svg"
 import imgUB from "./img/IconUpBlue.svg"
+import logo from "./img/Logo.svg"
 import Note from "./components/Note/Note";
+import Section from "./components/Section/Section";
+import Header from "./components/Header/Header";
+import Main from "./components/Main/Main";
+import Title from "./components/Title/Title";
 
 
 function App() {
 
 
     return (
-        <>
-            <header>
-                <Button color="black" text="Черная"/>
-            </header>
-            <main>
-                <Button color="white" text="белая"/>
-            </main>
-            <Button text="круглая" color="white" big={true}/>
+        <Section>
+            <Header>
+                <img alt="logo" src={logo}/>
+                <Button text="написать" color="black" textColor="#FFF"/>
+            </Header>
+
+            <Main>
+                <Title text="Мой дневничок"/>
+                <Button color="white" text="белая" textColor="#fff"/>
+            </Main>
+            <Button text="круглая" color="white" big={true} textColor="black"/>
             <Note title="asfsdf" text="sdfsdf"/>
             <footer>
                 <ButtonFilter color="blue" theme={imgDW} newOld={true}/>
@@ -27,7 +35,7 @@ function App() {
                 <ButtonFilter color="blue" theme={imgUW}/>
                 <ButtonFilter color="grey" theme={imgUB} newOld={true}/>
             </footer>
-        </>
+        </Section>
     );
 }
 
