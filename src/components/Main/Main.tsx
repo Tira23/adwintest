@@ -5,7 +5,7 @@ interface IMainProps {
     children: ReactNode
 }
 
-const Main = ({children}:IMainProps) => {
+const Main = ({children}: IMainProps) => {
     return (
         <style.Main>
             {children}

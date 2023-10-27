@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
-export const Note = styled.div`
-  
+export const Note = styled.div<{ margin?: string }>`
+  ${props => `margin: ${props.margin}`};
   width: 587px;
   height: 560px;
   padding: 70px 40px 70px 30px;
-  flex-shrink: 0;
+  //flex-basis: 30%;
   border-radius: 20px;
-  background: #b84343;
+  background: #FFF;
+  margin: 40px 5px;
   @media screen and (max-width: 1025px) {
     width: 480px;
     height: 530px;

@@ -8,6 +8,7 @@ interface ITitleProps {
 }
 
 const Title: FC<ITitleProps> = ({text, size = "medium"}: ITitleProps) => {
+
     switch (size) {
         case "lage":
             return (
