@@ -9,7 +9,9 @@ interface IPropsDiv {
     justify?: string,
     alignItems?: string
     width?: string,
-    gap?: string
+    gap?: string,
+    colum?: boolean,
+    togglePopup?: () => void
 }
 
 const DivColum = ({
@@ -20,7 +22,9 @@ const DivColum = ({
                       justify,
                       height,
                       width,
-                      gap
+                      gap,
+                      colum,
+                      togglePopup
                   }: IPropsDiv) => {
     return (
         <style.DivRow
@@ -31,6 +35,9 @@ const DivColum = ({
             height={height}
             width={width}
             gap={gap}
+            colum={colum}
+            pointer={togglePopup && true}
+            onClick={togglePopup}
         >
             {children}
         </style.DivRow>

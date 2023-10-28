@@ -10,10 +10,11 @@ interface ISectionProps {
     justify?: string,
     alignItems?: string
     flexDir?: string,
-    width?: number
+    width?: number,
+    ref?:any
 }
 
-const Section = ({children, flex, justify, margin, padding, alignItems, height, flexDir, width}: ISectionProps) => {
+const Section = ({children, flex, justify, margin, padding, alignItems, height, flexDir, width,ref}: ISectionProps) => {
     switch (flex) {
         case "column":
             return (
@@ -41,6 +42,20 @@ const Section = ({children, flex, justify, margin, padding, alignItems, height, 
                 >
                     {children}
                 </style.SectionFlex>);
+        case "modal":
+            return (
+                <style.SectionModal
+                    ref={ref}
+                    margin={margin}
+                    padding={padding}
+                    alignItems={alignItems}
+                    justify={justify}
+                    height={height}
+                    // flexdir={flexDir}
+                    width={width}
+                >
+                    {children}
+                </style.SectionModal>);
         default:
             return (
                 <style.Section

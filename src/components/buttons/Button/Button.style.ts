@@ -6,18 +6,21 @@ export const Button = styled.button<{
     top?: number,
     left?: number,
     right?: number,
-    bottom?: number
+    bottom?: number,
+    width?: number,
+    height?: number,
+    verysmall?: boolean
 }>`
   ${props => `position: ${props.position}`};
   ${props => `top: ${props.top}px`}
   ${props => `left: ${props.left}px`};
   ${props => `right: ${props.right}px`};
   ${props => `bottom: ${props.bottom}px`};
+  ${props => `width: ${props.width? props.width : 350}px`};
+  ${props => `height: ${props.height? props.height : 97}px`};
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 350px;
-  height: 97px;
   border-radius: 65px;
   padding: 42px 120px 42px 120px;
   color: white;
@@ -25,8 +28,11 @@ export const Button = styled.button<{
   letter-spacing: 1.08px;
   text-transform: uppercase;
   line-height: 90%;
+  cursor: pointer;
   background: ${props => (props.color === "black" && "#050F28")
-          || (props.color === "white" && "#88A1DE") || props.color};
+    || (props.color === "white" && "#88A1DE") || props.color};
+  ${props => props.verysmall && `width: 357px`}
+
 `
 export const ButtonWhite = styled(Button)<{ margin?: string }>`
   width: 100%;

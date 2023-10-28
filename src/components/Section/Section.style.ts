@@ -37,3 +37,22 @@ export const SectionFlex = styled(Section)<{
   flex-direction: ${props => props.flexdir};
   flex-wrap: wrap;
 `
+export const SectionModal = styled(Section)`
+  flex-direction: column;
+  justify-content: center;
+  width: 1214px;
+  height: 637px;
+  border-radius: 40px;
+  background: var(--white, #FFF);
+  z-index: 15;
+  @media screen and (max-width: 1025px){
+    width: 928px;
+    height: 745px;
+    padding: 50px;
+  }
+  @media screen and (max-width: 376px){
+    padding: 46px 10px 20px ;
+    width: 375px;
+    height: 745px;
+  }
+`

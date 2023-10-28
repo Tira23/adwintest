@@ -5,10 +5,17 @@ export const Note = styled.div<{ margin?: string }>`
   width: 587px;
   height: 560px;
   padding: 70px 40px 70px 30px;
-  //flex-basis: 30%;
   border-radius: 20px;
   background: #FFF;
   margin: 40px 5px;
+  transition: .4s ease-out;
+  &:hover{
+    h2{
+      color: white
+    }
+    background: #050F28;
+    color: #F6F6F6;
+  }
   @media screen and (max-width: 1025px) {
     width: 480px;
     height: 530px;

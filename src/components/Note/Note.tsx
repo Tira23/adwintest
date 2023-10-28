@@ -15,16 +15,16 @@ interface INote {
     margin?: string
 }
 
-const Note = ({margin}: INote) => {
-    const title = 'Что-то не такое важное, но тоже интересное'
-    const text = 'Идейные соображения высшего порядка, а также сложившаяся структура организации требуют определения и уточнения модели развития. Значимость этих проблем настолько очевидна, что сложившаяся структура организации представляет собой интересный эксперимент проверки существенных финансовых и административных условий.'
+const Note = ({margin, text, title}: INote) => {
+    // const title = ''
+    // const text = ''
     const date = Date.now()
     return (
         <styled.Note margin={margin}>
             <DivColum height="100%">
                 <style.DivColumBlock>
                     <Title text={title}></Title>
-                    <Text text={text}  lineheight={170}></Text>
+                    <Text text={text} lineheight={170}></Text>
                 </style.DivColumBlock>
                 <DivRow>
                     <DivRow alignItems="center">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {MouseEvent} from "react";
 import * as styled from "./Button.style"
 import Text from "../../Text/Text";
 
@@ -13,26 +13,30 @@ interface IButton {
     right?: number
     bottom?: number,
     size?: "Up" | "White" | "normal",
-    margin?: string
+    margin?: string,
+    togglePopup?: () => void
+    width?: number,
+    height?: number,
+    verysmall?: boolean
 }
 
-const Button = ({text, color, textColor, position, top, left, right, bottom, size, margin}: IButton) => {
+const Button = ({verysmall, width,height,text, color, textColor, position, top, left, right, bottom, size, margin, togglePopup}: IButton) => {
     switch (size) {
         case "Up":
             return (
-                <styled.ButtonBlueUp color={color} position={position} top={top} right={right} bottom={bottom}
+                <styled.ButtonBlueUp onClick={togglePopup} color={color} position={position} top={top} right={right} bottom={bottom}
                                      left={left}>
                     <Text text={text} color={textColor}/>
                 </styled.ButtonBlueUp>);
         case "White":
             return (
-                <styled.ButtonWhite color={color} position={position} top={top} right={right} bottom={bottom}
+                <styled.ButtonWhite onClick={togglePopup} color={color} position={position} top={top} right={right} bottom={bottom}
                                     left={left} margin={margin}>
                     <Text text={text} color={textColor}/>
                 </styled.ButtonWhite>);
         default:
             return (
-                <styled.Button color={color} position={position} top={top} right={right} bottom={bottom} left={left}>
+                <styled.Button verysmall={verysmall} width={width} height={height} onClick={togglePopup} color={color} position={position} top={top} right={right} bottom={bottom} left={left}>
                     <Text text={text} color={textColor}/>
                 </styled.Button>);
     }

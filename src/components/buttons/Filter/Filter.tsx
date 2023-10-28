@@ -11,7 +11,7 @@ interface IFilter {
 
 const ButtonFilter = ({newOld, image, color}: IFilter) => {
     return (
-        <styled.Filter color={color} >
+        <styled.Filter color={color}>
             <DivRow>
                 <img alt="arrow" src={image}/>
                 <Text text={newOld ? "Сначала новые" : "Сначала старые"} size={15} letter={.5}/>
