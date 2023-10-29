@@ -1,19 +1,43 @@
-import React, {FC} from 'react';
+import React, {ChangeEvent, Dispatch, FC, SetStateAction} from 'react';
 import * as style from './Input.style'
 
-interface IInputProps{
+interface IInputProps {
     width: number,
     height: number,
-    text:string,
+    text: string,
     type: string,
+    maxlength?: number,
+    onChange: Dispatch<SetStateAction<string>>,
+    minLength?: number
 }
 
-const Input:FC<IInputProps> = ({type,width,height, text}) => {
-    return (
-        <style.Label>{text}
-            <style.Input type={type} width={width} height={height} />
-        </style.Label>
-    );
+const Input: FC<IInputProps> = ({minLength, onChange, type, width, height, text, maxlength}) => {
+    switch (type) {
+        case "Text":
+            return (
+                <style.Label>{text}
+                    <style.Input onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+                                 type={type}
+                                 width={width}
+                                 height={height}
+                                 maxLength={maxlength}
+                                 minLength={minLength}
+                    />
+                </style.Label>
+            );
+        default:
+            return (
+                <style.Label>{text}
+                    <style.Input onChange={(e: ChangeEvent<HTMLInputElement>) => onChange(e.target.value)}
+                                 type={type}
+                                 width={width}
+                                 height={height}
+                                 maxLength={maxlength}
+                    />
+                </style.Label>
+            );
+    }
+
 };
 
 export default Input;

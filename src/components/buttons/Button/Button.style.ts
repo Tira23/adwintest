@@ -16,8 +16,8 @@ export const Button = styled.button<{
   ${props => `left: ${props.left}px`};
   ${props => `right: ${props.right}px`};
   ${props => `bottom: ${props.bottom}px`};
-  ${props => `width: ${props.width? props.width : 350}px`};
-  ${props => `height: ${props.height? props.height : 97}px`};
+  ${props => `width: ${props.width ? props.width : 350}px`};
+  ${props => `height: ${props.height ? props.height : 97}px`};
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,8 +30,11 @@ export const Button = styled.button<{
   line-height: 90%;
   cursor: pointer;
   background: ${props => (props.color === "black" && "#050F28")
-    || (props.color === "white" && "#88A1DE") || props.color};
-  ${props => props.verysmall && `width: 357px`}
+          || (props.color === "white" && "#88A1DE") || props.color};
+  ${props => props.verysmall && `width: ${props.width ? props.width : 357}px`};
+  @media screen and (max-width: 376px) {
+    width: 357px;
+  }
 
 `
 export const ButtonWhite = styled(Button)<{ margin?: string }>`

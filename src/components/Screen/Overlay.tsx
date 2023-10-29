@@ -1,4 +1,4 @@
-import React, {FC, MouseEvent, ReactNode, useEffect, useRef} from 'react';
+import React, {FC, ReactNode} from 'react';
 import * as style from './Screen.style'
 
 interface IScreenProps {

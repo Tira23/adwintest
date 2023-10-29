@@ -5,13 +5,14 @@ import Text from "../../Text/Text";
 
 interface IFilter {
     color: "grey" | "blue"
-    image: string
-    newOld?: boolean
+    image: string,
+    newOld?: boolean,
+    onClick: () => void
 }
 
-const ButtonFilter = ({newOld, image, color}: IFilter) => {
+const ButtonFilter = ({onClick, newOld, image, color}: IFilter) => {
     return (
-        <styled.Filter color={color}>
+        <styled.Filter onClick={onClick} color={color}>
             <DivRow>
                 <img alt="arrow" src={image}/>
                 <Text text={newOld ? "Сначала новые" : "Сначала старые"} size={15} letter={.5}/>

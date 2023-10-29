@@ -17,6 +17,9 @@ export const TitleH1 = styled.h1`
 `
 
 export const TitleH2 = styled.h2`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #050F28;
   font-size: 42px;
   line-height: 110%;
@@ -28,6 +31,9 @@ export const TitleH2 = styled.h2`
   }
 `
 export const TitleH3 = styled.h3`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   color: #050F28;
   font-size: 42px;
   line-height: 110%;

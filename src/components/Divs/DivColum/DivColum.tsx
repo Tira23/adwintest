@@ -13,7 +13,8 @@ interface IPropsDiv {
 
 const DivColum: FC<IPropsDiv> = ({gap, children, margin, padding, alignItems, justify, height}) => {
     return (
-        <style.DivColum gap={gap} margin={margin} padding={padding} alignitem={alignItems} justify={justify} height={height}>
+        <style.DivColum gap={gap} margin={margin} padding={padding} alignitem={alignItems} justify={justify}
+                        height={height}>
             {children}
         </style.DivColum>
     );

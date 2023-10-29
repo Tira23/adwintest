@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 export const Note = styled.div<{ margin?: string }>`
+
   ${props => `margin: ${props.margin}`};
   width: 587px;
   height: 560px;
@@ -9,13 +10,16 @@ export const Note = styled.div<{ margin?: string }>`
   background: #FFF;
   margin: 40px 5px;
   transition: .4s ease-out;
-  &:hover{
-    h2{
+
+  &:hover {
+    h2 {
       color: white
     }
+
     background: #050F28;
     color: #F6F6F6;
   }
+
   @media screen and (max-width: 1025px) {
     width: 480px;
     height: 530px;

@@ -45,12 +45,12 @@ export const SectionModal = styled(Section)`
   border-radius: 40px;
   background: var(--white, #FFF);
   z-index: 15;
-  @media screen and (max-width: 1025px){
+  @media screen and (max-width: 1025px) {
     width: 928px;
     height: 745px;
     padding: 50px;
   }
-  @media screen and (max-width: 376px){
+  @media screen and (max-width: 376px) {
     padding: 46px 10px 20px ;
     width: 375px;
     height: 745px;

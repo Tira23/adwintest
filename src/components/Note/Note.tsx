@@ -11,14 +11,14 @@ import Title from "../Title/Title"
 interface INote {
     title: string,
     text: string,
-    date?: Date
+    date: string
     margin?: string
 }
 
-const Note = ({margin, text, title}: INote) => {
+const Note = ({margin, text, title, date}: INote) => {
     // const title = ''
     // const text = ''
-    const date = Date.now()
+    // const date = Date.now()
     return (
         <styled.Note margin={margin}>
             <DivColum height="100%">

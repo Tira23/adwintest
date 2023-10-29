@@ -11,10 +11,21 @@ interface ISectionProps {
     alignItems?: string
     flexDir?: string,
     width?: number,
-    ref?:any
+    ref?: any
 }
 
-const Section = ({children, flex, justify, margin, padding, alignItems, height, flexDir, width,ref}: ISectionProps) => {
+const Section = ({
+                     children,
+                     flex,
+                     justify,
+                     margin,
+                     padding,
+                     alignItems,
+                     height,
+                     flexDir,
+                     width,
+                     ref
+                 }: ISectionProps) => {
     switch (flex) {
         case "column":
             return (
