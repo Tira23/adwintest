@@ -16,9 +16,11 @@ interface INote {
 }
 
 const Note = ({margin, text, title, date}: INote) => {
-    // const title = ''
-    // const text = ''
-    // const date = Date.now()
+    const newDate = new Date(date)
+    const dateToMonth = newDate.toLocaleDateString()
+    const dateToTimeMinutes = newDate.getMinutes()
+    const dateToTimeHours = newDate.getHours()
+
     return (
         <styled.Note margin={margin}>
             <DivColum height="100%">
@@ -29,11 +31,12 @@ const Note = ({margin, text, title, date}: INote) => {
                 <DivRow>
                     <DivRow alignItems="center">
                         <img alt="Date" src={calendar}/>
-                        <Text color="#88A1DE" margin="0 0 0 13px" text="26.10.2023"></Text>
+                        <Text color="#88A1DE" margin="0 0 0 13px" text={dateToMonth}></Text>
                     </DivRow>
                     <DivRow alignItems="center">
                         <img alt="Date" src={watch}/>
-                        <Text color="#88A1DE" margin="0 0 0 13px" text="15:50"></Text>
+                        <Text color="#88A1DE" margin="0 0 0 13px"
+                              text={`${dateToTimeHours}:${dateToTimeMinutes}`}></Text>
                     </DivRow>
                 </DivRow>
             </DivColum>

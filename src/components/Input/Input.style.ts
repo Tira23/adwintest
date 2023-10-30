@@ -1,6 +1,9 @@
 import styled from "styled-components";
 
 export const Input = styled.input<{ width: number, height: number }>`
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   ${props => `width: ${props.width}px`};
   ${props => `height: ${props.height}px`};
   border-radius: 4px;

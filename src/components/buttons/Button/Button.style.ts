@@ -30,7 +30,7 @@ export const Button = styled.button<{
   line-height: 90%;
   cursor: pointer;
   background: ${props => (props.color === "black" && "#050F28")
-          || (props.color === "white" && "#88A1DE") || props.color};
+    || (props.color === "white" && "#88A1DE") || props.color};
   ${props => props.verysmall && `width: ${props.width ? props.width : 357}px`};
   @media screen and (max-width: 376px) {
     width: 357px;

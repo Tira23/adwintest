@@ -15,7 +15,7 @@ interface ITextareaProps {
 const Textarea: FC<ITextareaProps> = ({minLength, onChange, width, height, text, maxlength}) => {
     return (
         <styleLable.Label>{text}
-            <style.Textarea onChange={(e) => onChange(e.target.value)} width={width} height={height}
+            <style.Textarea id={'text'} onChange={(e) => onChange(e.target.value)} width={width} height={height}
                             maxLength={maxlength} minLength={minLength}/>
         </styleLable.Label>
     );

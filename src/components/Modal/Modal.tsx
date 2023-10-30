@@ -25,6 +25,10 @@ const Modal: FC<IModalProps> = ({togglePopup, createNote}) => {
 
     const create = () => {
         const note: INote = {id: Date.now(), title, text, date}
+
+        if (!note.date || !note.text || !note.title) {
+            return
+        }
         createNote(note);
         togglePopup()
     }
@@ -43,7 +47,7 @@ const Modal: FC<IModalProps> = ({togglePopup, createNote}) => {
                 </DivRow>
                 <Textarea minLength={10} onChange={setText} text="Заметка" width={1094} height={166} maxlength={2000}/>
                 <Button onClick={create} verysmall={true} width={533} text="Поделиться наболевшим" color="black"
-                        textColor="white" />
+                        textColor="white"/>
             </DivColum>
         </Section>
     );

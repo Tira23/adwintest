@@ -20,146 +20,12 @@ import Text from "./components/Text/Text";
 import Modal from "./components/Modal/Modal";
 import Overlay from "./components/Screen/Overlay";
 import {INote} from "./interface";
-
-// const someNote: INote[] = [
-//     {
-//         id: 1,
-//         title: '1',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 2,
-//         title: '2',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 3,
-//         title: '3',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 4,
-//         title: '4',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 5,
-//         title: '5',
-//         text: 'sdfsd',
-{/*        date: '34234'*/}
-//     },
-//     {
-{/*        id: 6,*/}
-//         title: '6',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-{/*    {*/}
-//         id: 7,
-//         title: '7',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 8,
-//         title: '8',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 9,
-//         title: '9',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 10,
-//         title: '10',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 11,
-//         title: '11',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 12,
-//         title: '12',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 13,
-//         title: '13',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 14,
-//         title: '14',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 15,
-//         title: '15',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 16,
-//         title: '16',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 17,
-//         title: '17',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 18,
-//         title: '18',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 19,
-//         title: '19',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 20,
-//         title: '20',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 21,
-//         title: '21',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//     {
-//         id: 22,
-//         title: '22',
-//         text: 'sdfsd',
-//         date: '34234'
-//     },
-//
-// ]
+import {GetFromLocal} from "./GetFromLocal/GetFromLocal";
+import {InitialNotes} from "./InitialNotes";
 
 function App() {
     const [open, setOpen] = useState(false);
-    const [notes, setNotes] = useState<INote[]>([]);
+    const [notes, setNotes] = useState<INote[]>(GetFromLocal || InitialNotes);
     const [page, setPage] = useState(1);
     const [countElements, setCountElements] = useState<number>(6);
     const [pages, setPages] = useState<ReactNode[]>([<Text key={1} text="1" size={22}/>]);
@@ -188,6 +54,12 @@ function App() {
             return current
         })
     }
+
+    useEffect(() => {
+        return () => {
+            localStorage.setItem("notes", JSON.stringify(notes));
+        }
+    }, [notes])
 
     const sortNote2 = useMemo(() => {
         let curNote
